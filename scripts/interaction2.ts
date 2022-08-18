@@ -1,7 +1,5 @@
-
-
-import { ethers } from "hardhat";
 const helpers = require("@nomicfoundation/hardhat-network-helpers");
+import { ethers } from "hardhat";
 
 const main = async () => {
     const USDCAddress = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
@@ -44,14 +42,14 @@ const main = async () => {
         deadline
     );
 
-    const usdcBalAfter = await USDC.balanceOf(impersonatedSigner.address);
-    const ethBal2 = await impersonatedSigner.getBalance();
-    // const wethBal2 = await WETH.balanceOf(impersonatedSigner.address);
-    // const daiBalAfter = await DAI.balanceOf(impersonatedSigner.address);
+     const usdcBalAfter = await USDC.balanceOf(impersonatedSigner.address);
+     const ethBal2 = await impersonatedSigner.getBalance();
+    //  const wethBal2 = await WETH.balanceOf(impersonatedSigner.address);
+     const daiBalAfter = await DAI.balanceOf(impersonatedSigner.address);
 
-    console.log("usdc balance after swap", Number(usdcBalAfter._hex));
-    // console.log("weth balance before swap", Number(wethBal2._hex));
-    console.log("eth balance after swap", Number(ethBal2._hex));
+     console.log("usdc balance after swap", Number(usdcBalAfter._hex));
+    //  console.log("weth balance before swap", Number(wethBal2._hex));
+     console.log("eth balance after swap", Number(ethBal2._hex));
 }
 
 main().catch((error) => {
